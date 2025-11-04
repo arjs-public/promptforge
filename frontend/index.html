@@ -1,0 +1,90 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="utf-8"/>
+  <title>PromptForge — Starter</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <link rel="stylesheet" href="styles.css"/>
+</head>
+<body>
+  <div class="container">
+    <h1>PromptForge</h1>
+    <div class="main-content">
+      <div class="history-column">
+        <section id="history-section">
+          <div class="history-header">
+            <h2>History</h2>
+            <div class="history-controls">
+              <button id="select-history" type="button">Select</button>
+              <button id="delete-history" type="button">🗑️</button>
+              <button id="cancel-select-history" type="button">❌</button>
+            </div>
+          </div>
+          <div id="select-all-container">
+            <input type="checkbox" id="select-all-history">
+            <label for="select-all-history">Select All</label>
+          </div>
+          <ul id="history"></ul>
+        </section>
+      </div>
+      <div class="form-column">
+        <form id="craft-form">
+          <label>Title<input id="title" placeholder="Short title"/></label>
+          <label>Context<textarea id="context" rows="3"></textarea></label>
+          <label>Additional Info<textarea id="additional_info" rows="3"></textarea></label>
+          <div class="form-row">
+            <label>AI Role
+              <input id="ai_role" list="ai-role-options" placeholder="Select or type…"/>
+            </label>
+            <label>Target Audience
+              <input id="target_audience" list="target-audience-options" placeholder="Select or type…"/>
+            </label>
+            <label>Output Format
+              <input id="output_format" list="output-format-options" placeholder="Select or type…"/>
+            </label>
+          </div>
+          <datalist id="ai-role-options">
+            <option value="Experienced Programmer"></option>
+            <option value="Helpful Assistant"></option>
+            <option value="Ghostwriter"></option>
+            <option value="Experienced Legal Assistant"></option>
+            <option value="Advisor"></option>
+            <option value="Mentor"></option>
+            <option value="Old Friend"></option>
+          </datalist>
+          <datalist id="target-audience-options">
+            <option value="Developer"></option>
+            <option value="User"></option>
+            <option value="Supervisor"></option>
+            <option value="Colleague"></option>
+            <option value="3rd Party"></option>
+            <option value="Requestor"></option>
+          </datalist>
+          <datalist id="output-format-options">
+            <option value="best fit"></option>
+            <option value="json"></option>
+            <option value="text"></option>
+          </datalist>
+          <div class="buttons">
+            <button id="generate" type="button">Generate</button>
+            <button id="save" type="button">Save</button>
+            <button id="clear" type="button">Clear</button>
+          </div>
+        </form>
+        <section>
+          <div class="crafted-prompt-header">
+            <h2>Crafted Prompt</h2>
+            <div class="outbuttons">
+              <button id="copy">Copy</button>
+              <button id="export">Export .txt</button>
+              <button id="clear-crafted">Clear</button>
+            </div>
+          </div>
+          <pre id="crafted" class="output"></pre>
+        </section>
+      </div>
+    </div>
+  </div>
+  <script src="app.js?v=3"></script>
+</body>
+</html>
